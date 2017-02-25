@@ -51,7 +51,7 @@ namespace Area
 
             double d = this.Perimetr() / 2;
 
-            double ar = Math.Sqrt(d * (d - a) * (d - b) * (d - c));
+            double ar = Math.Sqrt(Math.Abs(d * (d - a) * (d - b) * (d - c))); // Вычисление площади по формуле Герона, берем по модулю, т.к. точки могут быть с отрицательными координатами
 
             return ar;
         }

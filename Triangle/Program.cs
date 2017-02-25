@@ -7,16 +7,16 @@ namespace Area
     {
         static void Main(string[] args)
         {
-            Triangle[] mass = new Triangle[6];
+            Triangle[] mass = new Triangle[7];
 
             Point p1_0 = new Point(0, 0);
             Point p2_0 = new Point(0, 3);
             Point p3_0 = new Point(4, 0);
             mass[0] = new Triangle(p1_0, p2_0, p3_0);
 
-            Point p1_1 = new Point(0, 0);
-            Point p2_1 = new Point(0, 3);
-            Point p3_1 = new Point(3, 0);
+            Point p1_1 = new Point(1, 1);
+            Point p2_1 = new Point(1, 3);
+            Point p3_1 = new Point(3, 1);
             mass[1] = new Triangle(p1_1, p2_1, p3_1);
 
             Point p1_2 = new Point(0, 0);
@@ -39,6 +39,12 @@ namespace Area
             Point p2_5 = new Point(2, 4);
             Point p3_5 = new Point(3, 6);
             mass[5] = new Triangle(p1_5, p2_5, p3_5);
+
+            // Корректно вычисляет площадь, если точки имеют отрицательные координаты
+            Point p1_6 = new Point(-1, -1);
+            Point p2_6 = new Point(-1, -3);
+            Point p3_6 = new Point(-3, -1);
+            mass[6] = new Triangle(p1_6, p2_6, p3_6);
 
             var dictionary = new Dictionary<int, double>();
             double middle_per = 0;
