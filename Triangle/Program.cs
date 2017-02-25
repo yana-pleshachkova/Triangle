@@ -7,7 +7,7 @@ namespace Area
     {
         static void Main(string[] args)
         {
-            Triangle[] mass = new Triangle[5];
+            Triangle[] mass = new Triangle[6];
 
             Point p1_0 = new Point(0, 0);
             Point p2_0 = new Point(0, 3);
@@ -34,6 +34,12 @@ namespace Area
             Point p3_4 = new Point(5, 3);
             mass[4] = new Triangle(p1_4, p2_4, p3_4);
 
+            // Некорректный треугольник - точки лежат на одной прямой
+            Point p1_5 = new Point(1, 2);
+            Point p2_5 = new Point(2, 4);
+            Point p3_5 = new Point(3, 6);
+            mass[5] = new Triangle(p1_5, p2_5, p3_5);
+
             var dictionary = new Dictionary<int, double>();
             double middle_per = 0;
 
@@ -42,7 +48,7 @@ namespace Area
 
             for (int i = 0; i < mass.Length; i++)
             {
-                if (mass[i].Right())
+                if (mass[i].Right() == 1)
                 {
                     dictionary.Add(i, mass[i].Perimetr());
                 }
@@ -53,7 +59,7 @@ namespace Area
             for (int i = 0; i < mass.Length; i++)
             {
 
-                if (mass[i].Isosceles())
+                if (mass[i].Isosceles() == 1)
                 {
                     dictionary_2.Add(i, mass[i].Area());
                 }
@@ -72,7 +78,7 @@ namespace Area
             middle_per = middle_per / dictionary.Count;
             middle_area = middle_area / dictionary_2.Count;
 
-            Console.WriteLine("Cоздано 5 треугольников");
+            Console.WriteLine("Cоздано " + mass.Length + " треугольников");
             for (int i = 0; i < mass.Length; i++)
             {
                 Console.WriteLine("Треугольник под номером " + i + " = " + mass[i].ToString());
