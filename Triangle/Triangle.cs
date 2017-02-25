@@ -16,7 +16,7 @@ namespace Area
 
         public override string ToString()
         {
-            return String.Format("s({0}, {1}), m({2}, {3}), l({4}, {5})", s.x, s.y, m.x, m.y, l.x, l.y);
+            return String.Format("s({0}, {1}), m({2}, {3}), l({4}, {5})", s.cX, s.cY, m.cX, m.cY, l.cX, l.cY);
         }
 
         public double Perimetr()

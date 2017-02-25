@@ -20,7 +20,7 @@ namespace Area
 
         public static double lengthEdge(Point a, Point b)
         {
-            double s = Math.Sqrt(Math.Pow((b.x - a.x), 2) + Math.Pow((b.y - a.y), 2));
+            double s = Math.Sqrt(Math.Pow((b.cX - a.cX), 2) + Math.Pow((b.cY - a.cY), 2));
 
             return s;
         }
