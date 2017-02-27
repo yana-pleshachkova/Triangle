@@ -8,7 +8,7 @@ namespace Area
 
         public Triangle(Point p1, Point p2, Point p3) //объекты класса Triangle будут состоять из трех объектов класса Point
         {
-            if ((p3.cX - p1.cX) * (p2.cY - p1.cY) == (p2.cX - p1.cX) * (p3.cY - p1.cY))
+            if ((p3.cX - p1.cX) * (p2.cY - p1.cY) == (p2.cX - p1.cX) * (p3.cY - p1.cY)) //проверяем, лежат ли точки на одной прямой
             {
                 s = null;
                 m = null;
